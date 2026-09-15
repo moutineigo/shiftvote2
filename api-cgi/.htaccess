@@ -1,0 +1,10 @@
+RewriteEngine On
+
+# app.py itself must never be served as a static file (see known incident
+# in the sibling osusume-map/jinja-log projects: without this guard, a file
+# that actually exists on disk gets served statically by Apache instead of
+# being routed through the CGI handler).
+RewriteRule ^(app\.py|seed_data\.py|requirements\.txt)$ - [F,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.cgi/$1 [QSA,L]
