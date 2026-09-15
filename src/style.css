@@ -186,15 +186,3 @@ textarea.comment {
   padding: 10px;
   border-radius: 8px;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #1c1a17;
-    --panel: #262320;
-    --border: #3d382f;
-    --text: #ece7de;
-    --text-muted: #a39a8a;
-    --accent-weak: #223a2c;
-    --locked-bg: #2c2822;
-  }
-}
